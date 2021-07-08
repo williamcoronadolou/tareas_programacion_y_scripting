@@ -1,0 +1,84 @@
+---
+title: "tarea_3_r"
+output: html_notebook
+---
+
+
+
+```{r}
+
+
+library(gapminder)
+library(dplyr)
+
+#¿Cómo leer un archivo CSV desde R?
+
+#Obtener con "getwd()" el Working Directory para colocar en esa carpeta el archivo primary_results.csv
+
+getwd()
+#"C:/Users/William Coronado Lou/Google Drive/Master/Programacion y Scripting"
+
+#Con read.csv leer el archivo y 
+
+read.csv("primary_results.csv")
+
+#Asignar el dataset a la variable "dataset_results"
+
+dataset_results <- read.csv("primary_results.csv")
+
+
+```
+
+
+
+```{r}
+
+#1. Filtrar todos los votos del estado de Florida
+
+
+Florida_results <- filter(dataset_results, state=="Florida")
+
+Florida_results
+
+
+
+
+```
+
+```{r}
+#2. Operadores lógicos
+
+# 2.1. Filtrar votos para los candidatos Hillary Clinton o Donald Trump
+
+HC_and_DT_results <- filter(dataset_results, candidate== "Hillary Clinton" | candidate== "Donald Trump")
+
+
+HC_and_DT_results
+
+# 2.2. Filtrar votos para el partido Demócrata y el condado Shelby
+
+Shelby_democrat_results <- filter(dataset_results, party=="Democrat", county=="Shelby")
+Shelby_democrat_results
+
+# 2.3. Filtrar votos para el estado de Alabama y que la cantidad de votos sea mayor a 15000
+
+Alabama_over_15000_results <- filter(dataset_results, state=="Alabama", votes>15000)
+Alabama_over_15000_results
+
+```
+
+```{r}
+
+# 3. Utilice la función select y arrange para el siguiente filtrado:
+
+
+#3.1 Filtrar votos para el estado de Texas y el condado Denton, seleccionando
+#    únicamente las columnas party, candidate, votes, luego ordene de forma
+#   descendente por la columna votes.
+
+
+
+
+```
+
+
