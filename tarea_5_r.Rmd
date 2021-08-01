@@ -100,7 +100,8 @@ questions %>%
   inner_join(answers, c("id" = "question_id"), suffix = c("_question", "_answer")) %>% 
     mutate(gap = as.integer(as.Date(creation_date_question, "%Y-%m-%d")) - as.Date(creation_date_answer, "%Y-%m-%d"))
 
-#No hallé como hacer este cambio de char a date.
+ #questions<-  mutate(questions, creation_date = as.Date(creation_date)) #convirtiendo las columnas de fecha en date, desde Char
+ #answers <-  mutate(answers, creation_date=as.Date(answers$creation_date)) #convirtiendo las columnas de fecha en date, desde Char
 
 ```
 
